@@ -20,7 +20,7 @@ CClient::CClient()
 	// Initialize game offsets
 	if(!CGameOffsets::Initialize())
 	{
-		MessageBox(NULL,"Cannot detect game version! Mod currently supports "MOD_SUPPORTED_VERSIONS" please try update or downgrade your game.","Fatal Error",MB_ICONERROR);
+		MessageBox(NULL,"Cannot detect game version! Mod currently supports "MOD_SUPPORTED_VERSIONS" please try to update or downgrade your game.","Fatal Error",MB_ICONERROR);
 		ExitProcess(0);
 		return;
 	}
@@ -74,14 +74,14 @@ void CClient::loadGame()
 	bNetworkState = true;
 
 	char szAddress[64], *res;
-	strcpy(szAddress,"127.0.0.1");
+	strcpy(szAddress,MASTER_SERVERIP);
 	FILE * fFile = fopen(SharedUtils::GetAbsolutePath("server.conf"),"r+");
 	if(fFile)
 	{
 		res = fgets(szAddress,64,fFile);
 		if(res==NULL)
 		{
-			strcpy(szAddress,"127.0.0.1");
+			strcpy(szAddress,MASTER_SERVERIP);
 		}
 	}
 	fclose(fFile);

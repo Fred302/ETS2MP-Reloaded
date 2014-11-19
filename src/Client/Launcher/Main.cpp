@@ -15,7 +15,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	SharedUtils::Protection::InstallAntyDebugger();
 
 	// Predefine all varibles
-	char szGamePath[MAX_PATH] = { 0 };
+	char szGamePath[MAX_PATH] = { "C:\\Games\\ETS2" };
 	char szGameFullPath[MAX_PATH] = { 0 };
 	char szParams[] = "-rdevice dx9";
 
@@ -25,16 +25,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 #else
 	char * szLibraryPath = "Client.dll";
 #endif
-
-	// Grab game path from registry
-	if(!SharedUtils::Registry::Read(HKEY_LOCAL_MACHINE, "Software\\SCS Software\\Euro Truck Simulator 2", "InstallDir", szGamePath, MAX_PATH))
-	{
-		// If we cannot find it - display an error
-		// and close launcher
-		// TODO: Custom game path selector
-		MessageBox(NULL,"Cannot find game path in registry!", "Fatal Error", MB_ICONERROR);		
-		return 0;
-	}
 
 	// Format game paths
 	sprintf(szGamePath,"%s\\bin\\win_x86",szGamePath);

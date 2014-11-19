@@ -18,4 +18,6 @@
 #endif
 
 #define PROJECT_REGISTRY_KEY		"Software\\"PROJECT_NAME
-#define MOD_SUPPORTED_VERSIONS	    "1.2.5"
+#define MOD_SUPPORTED_VERSIONS	    "1.3.1"
+#define MASTER_SERVERIP             "192.168.1.104"
+#define MASTER_SERVERPORT           8365;

@@ -96,6 +96,7 @@ int _declspec(naked) CSomething::sub_61CA40(int*,const char**,signed int)
 
 int gWeather = 0;
 bool bDebug = false;
+void initConnection();
 void CGraphics::Render()
 {
 	if(!m_sDevice)
@@ -261,7 +262,7 @@ void CGraphics::Render()
 	
 	if(GetAsyncKeyState(VK_NUMPAD7))
 	{
-		// Its game not profile
+		/* Its game not profile
 		GameETS2 *pProfile = *(GameETS2**)CGameOffsets::VAR_GamePtr;
 		DWORD dwUnknown = *(DWORD*)(pProfile + 2032); //It's can be WorldManager (I'm not sure!)
 		if(!dwUnknown)
@@ -285,7 +286,7 @@ void CGraphics::Render()
 			gWeather++;
 			if(gWeather > 1)
 				gWeather = 0;
-		}
+		}*/
 	}
 		
 	if(GetAsyncKeyState(VK_NUMPAD8))

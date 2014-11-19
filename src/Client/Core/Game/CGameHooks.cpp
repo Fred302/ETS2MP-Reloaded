@@ -766,7 +766,6 @@ void _declspec(naked) HOOK_SaveGame()
 
 bool CGameHooks::Initialize()
 {
-#ifdef NO_131_COMPILATION
 	// 0x6A6EF0 - CreateLicencePlate (BASE + 748 - manager)
 	// 0xA6B880 - console(?)
 	// 0x593760 - LoadUIScript
@@ -847,6 +846,5 @@ bool CGameHooks::Initialize()
 
 	// Vars hook
 	Memory::JumpHook(HOOKPOS_CVars__Store, (DWORD)HOOK_CVars__Store);
-#endif
 	return true;
 }
