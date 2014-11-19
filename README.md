@@ -1,4 +1,5 @@
-ETS2MP
+ETS2MP Reloaded
 ======
 
-Old code of Euro Truck Simulator 2 Multiplayer
+Multiplayer code for ETS2MP
+
